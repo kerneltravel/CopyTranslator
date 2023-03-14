@@ -114,8 +114,6 @@
       "electron-76"
     ],
     "platforms": [
-      "win32",
-      "darwin",
       "linux"
     ],
     "arches": [
