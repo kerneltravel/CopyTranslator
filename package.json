@@ -10,8 +10,8 @@
     "electron:build": "npm run prebuild && vue-cli-service electron:build && npm run postbuild",
     "electron:serve": "npm run prebuild && vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
-    "rebuild": "npm rebuild --runtime=electron --target=8.2.3 --disturl=https://atom.io/download/atom-shell --abi=76",
-    "rebuild_32": "npm rebuild --runtime=electron --target=8.2.3 --disturl=https://atom.io/download/atom-shell --abi=76 --arch=ia32",
+    "rebuild": "npm rebuild --runtime=electron --target=8.2.1 --disturl=https://mirrors.huaweicloud.com/nodejs --abi=76",
+    "rebuild_32": "npm rebuild --runtime=electron --target=8.2.1 --disturl=https://mirrors.huaweicloud.com/nodejs --abi=76 --arch=ia32",
     "prebuild": "tsc ./src/prebuild.ts --downlevelIteration --esModuleInterop && node ./src/prebuild.js && npm run clean",
     "postbuild": "node postbuild.js",
     "clean": "node clean.js",
@@ -23,7 +23,7 @@
   },
   "main": "background.js",
   "dependencies": {
-    "@adeperio/forcefocus": "^1.0.3",
+    "node-addon-api": "*",
     "@gotoeasy/bus": "^1.0.0",
     "@mdi/font": "^7.0.96",
     "@nut-tree/nut-js": "^2.3.0",
@@ -50,6 +50,7 @@
     "electron-log": "^4.2.4",
     "electron-updater": "4.2.5",
     "font-list": "^1.4.5",
+    "iconv": "^2.3.5",
     "iohook": "0.9.0",
     "lodash.compact": "^3.0.1",
     "lodash.flatten": "^4.4.0",
@@ -72,7 +73,8 @@
     "vuedraggable": "^2.24.3",
     "vuetify": "v2.6.12",
     "vuex": "^3.2.0",
-    "vuex-electron": "https://github.com/MaverickMartyn/vuex-electron.git"
+    "vuex-electron": "https://github.com/MaverickMartyn/vuex-electron.git",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
@@ -92,7 +94,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "1.0.0-beta.29",
-    "electron": "8.2.3",
+    "electron": "8.2.1",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",

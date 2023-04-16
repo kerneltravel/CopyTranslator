@@ -15,8 +15,8 @@ import { LayoutConfig } from "@/common/rule";
 import bus from "@/common/event-bus";
 import os from "os";
 
-const forceFocus =
-  os.platform() == "win32" ? require("@adeperio/forcefocus") : null;
+//const forceFocus =
+//  os.platform() == "win32" ? require("@adeperio/forcefocus") : null;
 
 import qs from "qs";
 
@@ -248,11 +248,11 @@ export class WindowManager {
     }
     window.show();
     window.moveTop();
-    if (forceFocus != null) {
+//    if (forceFocus != null) {
       //https://github.com/electron/electron/issues/2867
       //https://www.npmjs.com/package/@adeperio/forcefocus
-      forceFocus.focusWindow(window);
-    }
+    //      forceFocus.focusWindow(window);
+    //}
   }
 
   setStayTop(val: boolean) {
